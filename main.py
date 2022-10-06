@@ -1,24 +1,4 @@
-'''
-===============================================================================
-ENGR 133 Fa 2020
-
-Assignment Information
-	Assignment:     Individual Project
-	Author:         Dojun, Tomo, tshimada@purdue.edu
-	Team ID:        LC1-30 (e.g. LC1-14 for section 1 team 14)
-
-Contributors:       Name, login@purdue [repeat as needed]
-	My contributor(s) helped me:
-	[] understand the assignment expectations without
-		telling me how they will approach it.
-	[] understand different ways to think about a solution
-		without helping me plan my solution.
-	[] think through the meaning of a specific error or
-		bug present in my code without looking at my code.
-	Note that if you helped somebody else with their code, you
-	have to list that person as a contributor here as well.
-===============================================================================
-'''
+import json
 import sys
 import math
 import WebAPIFunction as API
@@ -68,17 +48,13 @@ def organizePlaylistTrackInfo(tracklist, offset):
 # START OF MAIN FUNCTION#
 ########################
 
-print('BEFORE USING THE PROGRAM, PLEASE CHANGE THE CILENT ID AND CLIENT SECRET ON LINES 78 AND 80')
+with open("config.json", "r") as conRead:
+    config = json.load(conRead)
 
-'''
-CHANGE THE SPOTIFY CLIENT ID AND SECRET BEFORE USING THE PROGRAM
-DUE TO TERMS OF SERVICE AND SECURITY, IT IS NOT ALLOWED TO SHARE THE SPOTIFY CLIENT ID AND SECRET
-THIS CAN BE OBTAINED BY FOLLOWING THE MANUAL ON THE REPORT
-'''
 # spotify_client_ID = input('Enter your Spotify Client ID: ')
-spotify_client_ID = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+spotify_client_ID = config["SPOTIFY_CLIENT_ID"]
 # spotify_client_secret = input('Enter your Spotify Client Secret: ')
-spotify_client_secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+spotify_client_secret = config["SPOTIFY_CLIENT_SECRET"]
 
 # runs tokenGen function
 errCode, token = API.tokenGen(spotify_client_ID, spotify_client_secret)

@@ -1,25 +1,3 @@
-'''
-===============================================================================
-ENGR 133 Fa 2020
-
-Assignment Information
-	Assignment:     Individual Project
-	Author:         Dojun, Tomo, tshimada@purdue.edu
-	Team ID:        LC1-30 (e.g. LC1-14 for section 1 team 14)
-
-Contributors:       Name, login@purdue [repeat as needed]
-	My contributor(s) helped me:
-	[] understand the assignment expectations without
-		telling me how they will approach it.
-	[] understand different ways to think about a solution
-		without helping me plan my solution.
-	[] think through the meaning of a specific error or
-		bug present in my code without looking at my code.
-	Note that if you helped somebody else with their code, you
-	have to list that person as a contributor here as well.
-===============================================================================
-'''
-
 import requests
 import base64
 import json
